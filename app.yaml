@@ -1,0 +1,13 @@
+runtime: nodejs18
+
+env_variables:
+  NEXT_TELEMETRY_DISABLED: '1'  # Disable Next.js telemetry for production
+  NODE_ENV: 'production'
+  
+handlers:
+  - url: /_next/static
+    static_dir: .next/static
+  - url: /static
+    static_dir: public
+  - url: /.*
+    script: auto
